@@ -1,4 +1,18 @@
-$primary-color: #c8da52;
-$secondary-color: #8a645e;
-$accent-color1: #da6452;
+$primary-color: #7b5954;
+$secondary-color: #da6452;
+$accent-color1: #d5e37c;
 $accent-color2: #6452da;
+$secondary-color-hover: #cd412c;
+
+@mixin primary-button {
+  text-align: center;
+  width: 200px;
+  padding: 8px 0;
+  border: 2px solid $secondary-color;
+  border-radius: 4px;
+  color: #fff;
+  background-color: $secondary-color;
+  cursor: pointer;
+  font-size: 24px;
+}
+

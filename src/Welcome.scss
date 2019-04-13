@@ -1,0 +1,24 @@
+@import './_variables.scss';
+
+.form-container {
+  height: 850px;
+  width: 100%;
+  background-image: url(./Images/green_landscape.jpg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name-forest-input {
+  margin-right: 10px;
+  padding: 8px;
+  font-size: 24px;
+}
+
+.submit-btn {
+  @include primary-button;
+
+  &:hover {
+    background-color: $secondary-color-hover;
+  }
+}
