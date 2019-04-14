@@ -1,0 +1,8 @@
+@import './_variables';
+
+.learn-container {
+  @include center-flex;
+  height: 70%;
+  width: 65%;
+  background-color: rgba(218,100,82, .8);
+}

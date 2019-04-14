@@ -1,6 +1,6 @@
 $primary-color: #7b5954;
 $secondary-color: #da6452;
-$accent-color1: #d5e37c;
+$accent-color1: #cde37c;
 $accent-color2: #6452da;
 $secondary-color-hover: #cd412c;
 
@@ -16,3 +16,8 @@ $secondary-color-hover: #cd412c;
   font-size: 24px;
 }
 
+@mixin center-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

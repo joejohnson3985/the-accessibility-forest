@@ -1,4 +1,4 @@
-const terms = 
+const Terms = 
   [
     {
       "type": "html tag", 
@@ -152,74 +152,76 @@ const terms =
     }
   ]
 
-const practice = [
-  {
-    "type": "html tag",
-    "problem": "Screen grab of incorrect code",
-    "solution": "Screen grab of correct code",
-    "solutionTerms": []
-  },
-  {
-    "type": "html tag",
-    "problem": "Screen grab of incorrect code",
-    "solution": "Screen grab of correct code",
-    "solutionTerms": []
+// const practice = [
+//   {
+//     "type": "html tag",
+//     "problem": "Screen grab of incorrect code",
+//     "solution": "Screen grab of correct code",
+//     "solutionTerms": []
+//   },
+//   {
+//     "type": "html tag",
+//     "problem": "Screen grab of incorrect code",
+//     "solution": "Screen grab of correct code",
+//     "solutionTerms": []
 
-  },
-  {
-    "type": "html tag",
-    "problem": "Screen grab of incorrect code",
-    "solution": "Screen grab of correct code",
-    "solutionTerms": []
+//   },
+//   {
+//     "type": "html tag",
+//     "problem": "Screen grab of incorrect code",
+//     "solution": "Screen grab of correct code",
+//     "solutionTerms": []
 
-  },
-  {
-    "type": "html tag",
-    "problem": "Screen grab of incorrect code",
-    "solution": "Screen grab of correct code",
-    "solutionTerms": []
+//   },
+//   {
+//     "type": "html tag",
+//     "problem": "Screen grab of incorrect code",
+//     "solution": "Screen grab of correct code",
+//     "solutionTerms": []
 
-  },
-  {
-    "type": "html tag",
-    "problem": "Screen grab of incorrect code",
-    "solution": "Screen grab of correct code",
-    "solutionTerms": []
+//   },
+//   {
+//     "type": "html tag",
+//     "problem": "Screen grab of incorrect code",
+//     "solution": "Screen grab of correct code",
+//     "solutionTerms": []
 
-  },
-  {
-    "type": "attribute",
-    "problem": "Screen grab of incorrect code",
-    "solution": "Screen grab of correct code",
-    "solutionTerms": []
+//   },
+//   {
+//     "type": "attribute",
+//     "problem": "Screen grab of incorrect code",
+//     "solution": "Screen grab of correct code",
+//     "solutionTerms": []
 
-  },
-  {
-    "type": "attribute",
-    "problem": "Screen grab of incorrect code",
-    "solution": "Screen grab of correct code",
-    "solutionTerms": []
+//   },
+//   {
+//     "type": "attribute",
+//     "problem": "Screen grab of incorrect code",
+//     "solution": "Screen grab of correct code",
+//     "solutionTerms": []
 
-  },
-  {
-    "type": "attribute",
-    "problem": "Screen grab of incorrect code",
-    "solution": "Screen grab of correct code",
-    "solutionTerms": []
+//   },
+//   {
+//     "type": "attribute",
+//     "problem": "Screen grab of incorrect code",
+//     "solution": "Screen grab of correct code",
+//     "solutionTerms": []
 
-  },
-  {
-    "type": "attribute",
-    "problem": "Screen grab of incorrect code",
-    "solution": "Screen grab of correct code",
-    "solutionTerms": []
+//   },
+//   {
+//     "type": "attribute",
+//     "problem": "Screen grab of incorrect code",
+//     "solution": "Screen grab of correct code",
+//     "solutionTerms": []
 
-  },
-  {
-    "type": "attribute",
-    "problem": "Screen grab of incorrect code",
-    "solution": "Screen grab of correct code",
-    "solutionTerms": []
+//   },
+//   {
+//     "type": "attribute",
+//     "problem": "Screen grab of incorrect code",
+//     "solution": "Screen grab of correct code",
+//     "solutionTerms": []
 
-  }
-]
+//   }
+// ]
+
+export default Terms;
