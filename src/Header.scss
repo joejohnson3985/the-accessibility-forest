@@ -1,0 +1,29 @@
+@import './_variables.scss';
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $accent-color1;
+}
+
+.header-text {
+  color: $primary-color;
+  margin-left: 40px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 40px;
+  width: 500px;
+}
+
+.header-nav div {
+  @include primary-button;
+
+  &:hover {
+    background-color: $secondary-color-hover;
+  }
+}

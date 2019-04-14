@@ -1,0 +1,16 @@
+@import './_variables.scss';
+
+.forest {
+  width: 100%;
+  background-color: $accent-color1;
+  @include center-flex;
+  height: 280px;
+}
+
+.trees td {
+  text-align: center;
+  height: 150px;
+  width: 150px;
+  margin: 4px;
+  border: 2px solid red;
+}
