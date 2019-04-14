@@ -4,16 +4,17 @@ import DefinitionCard from './DefinitionCard.js';
 import MultipleChoice from './MultipleChoice.js';
 
 class Learn extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
     }
   }
 
   render() {
+    console.log(this.props.data)
     return (
       <div className="learn-container">
-        <DefinitionCard />
+        <DefinitionCard data={this.props.data}/>
         <MultipleChoice />
       </div>
     )

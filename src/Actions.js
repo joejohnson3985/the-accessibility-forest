@@ -22,7 +22,7 @@ class Actions extends Component {
     if(!this.props.forestName) {
       whatToRender = <Welcome nameForest={this.nameForest}/>
     } else {
-      whatToRender = <Learn />
+      whatToRender = <Learn data={this.props.data}/>
     }
     return (
       <div className='actions-container'>

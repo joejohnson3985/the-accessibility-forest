@@ -9,8 +9,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      forestName: ''
-
+      forestName: '',
+      data: Terms
     }
   }
 
@@ -24,11 +24,10 @@ class App extends Component {
 
   render() {
 
-    console.log(Terms)
     return (
       <div>
         <Header />
-        <Actions forestName={this.state.forestName} nameForest={this.nameForest}/>
+        <Actions data={this.state.data} forestName={this.state.forestName} nameForest={this.nameForest}/>
         <Forest forestName={this.state.forestName} />
       </div>
     );
