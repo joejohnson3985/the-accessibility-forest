@@ -1,34 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 
-class DefinitionCard extends Component {
-  constructor(props) {
-    super (props);
-    this.state = {
-      definitions: [],
-      currentTerm: 0
-    }
-  }
-
-  componentDidMount() {
-    this.getDefinitions();
-  }
-
-  getDefinitions = () => {
-    console.log(this.state.currentTerm)
-    const termDefinitions = this.props.data.map((term) => term.definition)
-    this.setState({
-      definitions: termDefinitions
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        <p>Hello</p>
-      </div>
-    )
-  }
+const DefinitionCard = (props) => {
+  return (
+    <div>
+      <h2>Definition</h2>
+      <h3>{props.termType}</h3>
+      <p>{props.definition}</p>
+    </div>
+  )
 }
 
 export default DefinitionCard;

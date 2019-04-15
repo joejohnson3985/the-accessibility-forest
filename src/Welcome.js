@@ -11,7 +11,6 @@ class Welcome extends Component {
 
   handleName = (e) => {
     e.preventDefault();
-    console.log(this.state.name)
     this.props.nameForest(this.state.name);
   }
 
