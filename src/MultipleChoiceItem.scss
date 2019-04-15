@@ -1,0 +1,15 @@
+@import './_variables.scss';
+
+.choice-btn {
+  @include secondary-button;
+  margin: 10px 0;
+
+  &:hover {
+    background-color: $secondary-color;
+  }
+
+  &:active {
+    @include active-btn;
+  }
+}
+

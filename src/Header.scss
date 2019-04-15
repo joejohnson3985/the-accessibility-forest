@@ -9,21 +9,38 @@
 
 .header-text {
   color: $primary-color;
-  margin-left: 40px;
+  margin-left: 20px;
 }
 
 .header-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-right: 40px;
-  width: 500px;
+  margin-right: 20px;
+  width: 330px;
 }
 
 .header-nav div {
   @include primary-button;
 
   &:hover {
-    background-color: $secondary-color-hover;
+    @include hover-btn;
+  }
+
+  &:active {
+    @include active-btn;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .header-container {
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+  }
+
+  .header-text {
+    text-align: center;
+    margin: 0;
   }
 }

@@ -12,16 +12,11 @@ class App extends Component {
     }
   }
 
-
-
-  
-
   render() {
-
     return (
       <div>
         <Header />
-        <Actions data={this.state.data}/>
+        <Actions data={this.state.data} />
       </div>
     );
   }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './MultipleChoiceItem.scss';
 
 class MultipleChoiceItem extends Component {
   constructor(props) {
@@ -22,7 +23,7 @@ class MultipleChoiceItem extends Component {
   render() {
     return (
       <div>
-        <div role='button' onClick= {this.handleClick}>{this.props.choice}</div>
+        <div className='choice-btn' role='button' onClick= {this.handleClick}>{this.props.choice}</div>
       </div>
     )
   }
