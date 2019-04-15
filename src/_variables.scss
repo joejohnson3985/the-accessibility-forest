@@ -2,7 +2,7 @@ $primary-color: #7b5954;
 $secondary-color: #da6452;
 $accent-color1: #c0db8a;
 $secondary-color-hover: rgba(218,100,82, .9);
-$plain-background: #c2a9a5;
+$plain-background: #efe9e2;
 
 @mixin primary-button {
   text-align: center;
@@ -20,9 +20,9 @@ $plain-background: #c2a9a5;
   text-align: center;
   width: 120px;
   padding: 3px 0;
-  border: 2px solid #fff;
+  border: 2px solid $primary-color;
   border-radius: 4px;
-  color: #fff;
+  color: $primary-color;
   cursor: pointer;
   font-size: 18px;
 }
