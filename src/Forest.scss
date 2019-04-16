@@ -2,15 +2,28 @@
 
 .forest {
   width: 100%;
-  background-color: $accent-color1;
+  background-color: $plain-background;
   @include center-flex;
-  height: 280px;
+  height: 130px;
+}
+.trees{
+  width: 200px;
 }
 
 .trees td {
   text-align: center;
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
   margin: 4px;
-  border: 2px solid red;
+}
+
+.trees td img {
+  // visibility: hidden;
+  height: 100px;
+}
+
+.trees caption {
+  margin-top: 10px;
+  font-size: 16px;
+  color: $primary-color;
 }

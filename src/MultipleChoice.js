@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import MultipleChoiceItem from './MultipleChoiceItem.js';
+import './MultipleChoice.scss';
 
 class MultipleChoice extends Component {
   constructor(props) {
@@ -49,7 +50,7 @@ class MultipleChoice extends Component {
 
   render() {
     return (
-      <div>
+      <div className='multiple-choice-container'>
         {this.displayAnswers()}
       </div>
     )

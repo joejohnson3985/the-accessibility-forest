@@ -1,23 +1,42 @@
 $primary-color: #7b5954;
 $secondary-color: #da6452;
-$accent-color1: #cde37c;
-$accent-color2: #6452da;
-$secondary-color-hover: #cd412c;
+$accent-color1: #c0db8a;
+$secondary-color-hover: rgba(218,100,82, .9);
+$plain-background: #efe9e2;
 
 @mixin primary-button {
   text-align: center;
-  width: 200px;
+  width: 150px;
   padding: 8px 0;
-  border: 2px solid $secondary-color;
   border-radius: 4px;
   color: #fff;
+   border: none;
   background-color: $secondary-color;
   cursor: pointer;
-  font-size: 24px;
+  font-size: 20px;
+}
+
+@mixin secondary-button {
+  text-align: center;
+  width: 120px;
+  padding: 3px 0;
+  border: 2px solid $primary-color;
+  border-radius: 4px;
+  color: $primary-color;
+  cursor: pointer;
+  font-size: 18px;
 }
 
 @mixin center-flex {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@mixin active-btn {
+  box-shadow: inset 0px 0px 5px #b83b27;
+}
+
+@mixin hover-btn {
+  background-color: $secondary-color-hover;
 }

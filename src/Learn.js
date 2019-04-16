@@ -24,6 +24,7 @@ class Learn extends Component {
     this.setState({
       termCounter: term
     }, () => {
+      this.props.scorePoints();
       this.getCurrentTerm();
     })
   }
@@ -57,9 +58,15 @@ class Learn extends Component {
 
   render() {
     return (
-      <div className="learn-container">
-        <DefinitionCard definition={this.state.currentTerm.definition} termType={this.state.currentTerm.type} />
-        <MultipleChoice currentAnswer={this.state.currentTerm.term} wrongAnswers={this.state.wrongAnswers} displayNextTerm={this.displayNextTerm} />
+      <div className='learn-container'>
+        <hgroup>
+          <h1>Match</h1>
+          <h5>Get 4 correct and a tree will grow in your forest!</h5>
+        </hgroup>
+        <div className='term-container'>
+          <DefinitionCard definition={this.state.currentTerm.definition} termType={this.state.currentTerm.type} />
+          <MultipleChoice currentAnswer={this.state.currentTerm.term} wrongAnswers={this.state.wrongAnswers} displayNextTerm={this.displayNextTerm} />
+        </div>
       </div>
     )
   }
