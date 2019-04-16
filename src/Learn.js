@@ -17,7 +17,7 @@ class Learn extends Component {
   componentWillMount = () => {
     setTimeout(() => {
       this.getCurrentTerm();
-    }, 1000)
+    }, 200)
   }
 
   displayNextTerm = () => {
@@ -63,7 +63,7 @@ class Learn extends Component {
       <div className='learn-container'>
         <hgroup>
           <h1>Match</h1>
-          <h5>Get 4 correct and a tree will grow in your forest!</h5>
+          <h5>Get 3 correct and a tree will grow in your forest!</h5>
         </hgroup>
         <div className='term-container'>
           <DefinitionCard definition={this.state.currentTerm.definition} termType={this.state.currentTerm.type} />

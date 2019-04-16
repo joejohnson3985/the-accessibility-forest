@@ -15,22 +15,30 @@ class Actions extends Component {
     this.state = {
       forestName: '',
       points: 0,
-      forestSize: 1,
-      treesToRender: []
+      treesToRender: [
+        <td key='first-tree'>
+          <img alt='Geometric tree illustration' src={Tree1}/>
+        </td>
+        ]
     }
   }
 
   componentDidMount() {
-    this.addTrees();
+    this.generateForest(this.state.points)
   }
 
   componentWillUpdate(nextProps, nextState) {
     localStorage.setItem('forestName', JSON.stringify(nextState.forestName));
+    localStorage.setItem('points', JSON.stringify(nextState.points));
+
   }
 
   componentWillMount() {
     localStorage.getItem('forestName') && this.setState({
       forestName: JSON.parse(localStorage.getItem('forestName'))
+    })
+    localStorage.getItem('points') && this.setState({
+      points: JSON.parse(localStorage.getItem('points'))
     })
   }
 
@@ -40,24 +48,26 @@ class Actions extends Component {
     this.setState({
       points: score
     }, () => {
-      this.growTrees();
+      if((score % 3) === 0) {
+       this.addTrees();
+      }
     })
   }
 
-  growTrees = () => {
-    let  numPoints = this.state.points
-    let treeCount = this.state.forestSize;
-    if((numPoints % 4) === 0) {
-      console.log('New Tree')
-      treeCount++
-      this.setState({
-        forestSize: treeCount,
-      }, () => {
-        this.addTrees();
-      })
-    } else {
-      console.log('need mo points')
+  generateForest = (points) => {
+    const treeImgs = [Tree1, Tree2, Tree3, Tree4, Tree5]
+    const trees =  Object.assign([], this.state.treesToRender)
+    for(let j = 0; j < Math.floor(points / 3); j++) {
+      let i = Math.floor(Math.random() * treeImgs.length)
+      trees.push(
+        <td key={j}>
+          <img alt='Geometric tree illustration' src={treeImgs[i]}/>
+        </td>
+      )
     }
+    this.setState({ 
+      treesToRender: trees,
+    })
   }
 
   addTrees = () => {
