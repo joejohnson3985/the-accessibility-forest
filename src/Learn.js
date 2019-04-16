@@ -15,7 +15,9 @@ class Learn extends Component {
   }
 
   componentWillMount = () => {
-    this.getCurrentTerm();
+    setTimeout(() => {
+      this.getCurrentTerm();
+    }, 1000)
   }
 
   displayNextTerm = () => {

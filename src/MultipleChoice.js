@@ -12,7 +12,9 @@ class MultipleChoice extends Component {
   }
 
   componentDidUpdate() {
-    this.getAnswerOptions();
+    setTimeout(() => {
+      this.getAnswerOptions();
+    }, 1000)
   }
 
   getAnswerOptions() {
@@ -42,7 +44,7 @@ class MultipleChoice extends Component {
         this.setState({
           answerOptions: []
         })
-      }, 1000)
+      }, 500)
     } else {
       alert('Try Again')
     }

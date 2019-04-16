@@ -1,36 +1,16 @@
 @import './_variables.scss';
 
 .header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  @include center-flex
   background-color: $accent-color1;
 }
 
 .header-text {
+  text-align: center;
   color: $primary-color;
-  margin-left: 20px;
+  margin: 0;
 }
 
-.header-nav {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-right: 20px;
-  width: 330px;
-}
-
-.header-nav div {
-  @include primary-button;
-
-  &:hover {
-    @include hover-btn;
-  }
-
-  &:active {
-    @include active-btn;
-  }
-}
 
 @media screen and (max-width: 900px) {
   .header-container {
