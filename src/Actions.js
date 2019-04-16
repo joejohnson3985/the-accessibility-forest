@@ -14,8 +14,6 @@ class Actions extends Component {
     super(props);
     this.state = {
       forestName: '',
-      learn: false,
-      practice: false,
       points: 0,
       forestSize: 1,
       treesToRender: []
@@ -24,6 +22,16 @@ class Actions extends Component {
 
   componentDidMount() {
     this.addTrees();
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem('forestName', JSON.stringify(nextState.forestName));
+  }
+
+  componentWillMount() {
+    localStorage.getItem('forestName') && this.setState({
+      forestName: JSON.parse(localStorage.getItem('forestName'))
+    })
   }
 
   scorePoints = () => {
