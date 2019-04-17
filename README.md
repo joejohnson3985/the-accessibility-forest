@@ -37,10 +37,17 @@ npm run test will allow you to see the test results
 ![MobileView](https://github.com/joejohnson3985/the-accessibility-forest/blob/master/src/Images/mobile-screengrab.png)
 
 
-# Tech/Frameworks Used
+## Tech/Frameworks Used
 
 * React
 * Sass
 * JSX
 * fetch API
 * Testing with Enzyme & Jest
+
+## Learning Goals 
+
+* Solidify React skills
+* Improve on testing with Enzyme and Jest
+* Improve personal git workflow
+* Working with Scss
