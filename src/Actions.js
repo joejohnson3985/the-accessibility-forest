@@ -13,6 +13,10 @@ class Actions extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      data: [],
+      termCounter: 0,
+      wrongAnswers: [],
+      currentTerm: null,
       forestName: '',
       points: 0,
       treesToRender: [
@@ -23,14 +27,15 @@ class Actions extends Component {
     }
   }
 
-  componentDidMount() {
-    this.generateForest(this.state.points)
-  }
-
-  componentWillUpdate(nextProps, nextState) {
-    localStorage.setItem('forestName', JSON.stringify(nextState.forestName));
-    localStorage.setItem('points', JSON.stringify(nextState.points));
-
+  getJsonData = () => {
+    fetch(`https://fe-apps.herokuapp.com/api/v1/memoize/1901/joejohnson3985/terms`)
+    .then(data => data.json())
+    .then(data => {
+      this.setState({ data: data.terms }, () => {
+        this.getCurrentTerm();
+      })
+    })
+    .catch(error => console.error(error))
   }
 
   componentWillMount() {
@@ -42,12 +47,62 @@ class Actions extends Component {
     })
   }
 
+  componentDidMount() {
+    this.generateForest(this.state.points);
+    this.getJsonData();
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem('forestName', JSON.stringify(nextState.forestName));
+    localStorage.setItem('points', JSON.stringify(nextState.points));
+  }
+
+  getCurrentTerm = () => {
+    let i = this.state.termCounter
+    if(!this.state.data.length) {
+      return
+    }
+    this.setState({
+      currentTerm: this.state.data[i],
+    }, () => {
+      this.getWrongAnswers();
+    })
+  }
+
+  getWrongAnswers = () => {
+    const terms = this.state.data.filter((term) => term.type === this.state.currentTerm.type && term !== this.state.currentTerm)
+    const wrongAnswers = [];
+    while(wrongAnswers.length !== 3) {
+      const rand = Math.floor(Math.random() * terms.length);
+      const term = terms[rand];
+      if(wrongAnswers.includes(term)) {
+        continue
+      }
+      wrongAnswers.push(term.term)
+    }
+    console.log(wrongAnswers)
+    this.setState({
+      wrongAnswers: wrongAnswers
+    })
+  }
+
+  displayNextTerm = () => {
+    let term = this.state.termCounter
+    term++
+    this.setState({
+      termCounter: term
+    }, () => {
+      this.scorePoints();
+    })
+  }
+
   scorePoints = () => {
     let score = this.state.points
     score++
     this.setState({
       points: score
     }, () => {
+      this.getCurrentTerm()
       if((score % 3) === 0) {
        this.addTrees();
       }
@@ -95,7 +150,7 @@ class Actions extends Component {
     if(!this.state.forestName) {
       whatToRender = <Welcome nameForest={this.nameForest}/>
     } else {
-      whatToRender = <Learn scorePoints={this.scorePoints} data={this.props.data}/>
+      whatToRender = <Learn displayNextTerm={this.displayNextTerm} scorePoints={this.scorePoints} currentTerm={this.state.currentTerm} wrongAnswers={this.state.wrongAnswers}/>
     }
     return (
       <div>

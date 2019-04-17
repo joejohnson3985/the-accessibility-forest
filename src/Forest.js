@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 import './Forest.scss';
 
-
-
-
 class Forest extends Component {
   constructor(props) {
     super(props);
