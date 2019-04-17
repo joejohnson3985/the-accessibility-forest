@@ -6,22 +6,19 @@ class MultipleChoice extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      showPopUp: false
     }
   }
 
-  componentDidMount() {
-    this.displayAnswers();
-  }
-
-  displayAnswers() {
+  displayAnswers = () => {
     const answersDisplay = [];
     let answerOptions = this.props.wrongAnswers;
     answerOptions.push(this.props.currentAnswer)
     answerOptions.sort()
-    for(let i = 0; i < 4; i++) {
-      answersDisplay.push(<MultipleChoiceItem choice={answerOptions[i]} key={i} handleAnswer={this.handleAnswer}/>)
-    }
+    let i = 0
+    answerOptions.map(answerOption => {
+      i++
+      return answersDisplay.push(<MultipleChoiceItem choice={answerOption} key={i} handleAnswer={this.handleAnswer}/>)
+    })
     return answersDisplay;
   }
 

@@ -8,9 +8,9 @@ exports[`Learn Should match the snapshot 1`] = `
     <h1>
       Match
     </h1>
-    <h4>
+    <h3>
       Get 3 correct and a tree will grow in your forest!
-    </h4>
+    </h3>
   </hgroup>
   <div
     className="term-container"
@@ -31,7 +31,7 @@ exports[`Learn Should match the snapshot 1`] = `
     />
   </div>
   <h2>
-     correct answers!
+     Correct Answers
   </h2>
 </div>
 `;
@@ -44,15 +44,15 @@ exports[`Learn no props Should match the snapshot without props 1`] = `
     <h1>
       Match
     </h1>
-    <h4>
+    <h3>
       Get 3 correct and a tree will grow in your forest!
-    </h4>
+    </h3>
   </hgroup>
   <p>
-    Preparing your terms...
+    Loading...
   </p>
   <h2>
-     correct answers!
+     Correct Answers
   </h2>
 </div>
 `;
