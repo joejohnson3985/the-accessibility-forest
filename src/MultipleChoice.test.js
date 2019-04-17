@@ -21,4 +21,9 @@ describe('MultipleChoice', () => {
   it('Should match the snapshot', () => {
     expect(wrapper).toMatchSnapshot()
   })
+
+  it('Should call the function displayNextTerm inside handleAnswer', () => {
+    wrapper.instance().handleAnswer();
+    expect(mockFunc).toBeCalled();
+  })
 })

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Actions Actions with forestName Should match snapshot with a forestName 1`] = `
+exports[`Actions Actions with forestName on load Should match snapshot with a forestName 1`] = `
 <div>
   <div
     className="actions-container"
@@ -11,7 +11,7 @@ exports[`Actions Actions with forestName Should match snapshot with a forestName
   </div>
   <Forest
     forestName=""
-    points={1}
+    points={0}
     trees={
       Array [
         <td>
