@@ -18,15 +18,15 @@ If any alterations to the code are made, then the page will refresh.
 
 #### Welcome screen
 
-![TheAccountabilityForestWelcomePage] (https://imgur.com/9XqkqL9)
+![TheAccountabilityForestWelcomePage](https://github.com/joejohnson3985/the-accessibility-forest/blob/master/src/Images/welcome-screengrab.png)
 
 #### Flash Card Page
 
-![FlasCardPage] (https://imgur.com/EAPgySM)
+![FlasCardPage](https://github.com/joejohnson3985/the-accessibility-forest/blob/master/src/Images/cardpage-screengrab.png)
 
 #### Mobile View
 
-![MobileView] (https://imgur.com/5vcLxsX)
+![MobileView](https://github.com/joejohnson3985/the-accessibility-forest/blob/master/src/Images/mobile-screengrab.png)
 
 
 # Tech/Frameworks Used
