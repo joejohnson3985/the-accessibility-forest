@@ -89,7 +89,7 @@ class Actions extends Component {
       }
       wrongAnswers.push(term.term)
     }
-    console.log(wrongAnswers)
+    // console.log(wrongAnswers)
     this.setState({
       wrongAnswers: wrongAnswers
     })
