@@ -8,17 +8,9 @@ class MultipleChoiceItem extends Component {
     }
   }
 
-  // handleClick(e) {
-  //   e.preventDefault();
-  //   let answer = e.target.innerText
-  //   console.log(answer)
-  //   this.props.checkAnswer(answer);
-  // }
-
   handleClick = () => {
     this.props.checkAnswer(this.props.choice)
   }
-
 
   render() {
     return (

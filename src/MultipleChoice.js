@@ -6,33 +6,21 @@ class MultipleChoice extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      answerOptions: []
     }
-    this.checkAnswer = this.checkAnswer.bind(this);
   }
 
-  componentDidUpdate() {
-    setTimeout(() => {
-      this.getAnswerOptions();
-    }, 200)
-  }
-
-  getAnswerOptions() {
-    if(!this.state.answerOptions.length) {
-      const correctAnswer = this.props.currentAnswer
-      let allOptions = this.props.wrongAnswers
-      allOptions.push(correctAnswer);
-      allOptions.sort();
-      this.setState({
-        answerOptions: allOptions
-      })
-    }
+  componentDidMount() {
+    this.displayAnswers();
   }
 
   displayAnswers() {
     const answersDisplay = [];
+    let answerOptions = this.props.wrongAnswers;
+    answerOptions.push(this.props.currentAnswer)
+    answerOptions.sort()
+    console.log(answerOptions)
     for(let i = 0; i < 4; i++) {
-      answersDisplay.push(<MultipleChoiceItem choice={this.state.answerOptions[i]} key={i} checkAnswer={this.checkAnswer}/>)
+      answersDisplay.push(<MultipleChoiceItem choice={answerOptions[i]} key={i} checkAnswer={this.checkAnswer}/>)
     }
     return answersDisplay;
   }
@@ -40,11 +28,10 @@ class MultipleChoice extends Component {
   checkAnswer = (answer) => {
     if(answer === this.props.currentAnswer) {
       this.props.displayNextTerm();
-      setTimeout(() => {
         this.setState({
           answerOptions: []
         })
-      }, 200)
+
     } else {
       alert('Try Again')
     }
