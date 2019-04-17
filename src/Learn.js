@@ -15,7 +15,7 @@ class Learn extends Component {
     if(this.props.currentTerm && this.props.wrongAnswers) {
       whatToRender = <div className='term-container'>
                       <DefinitionCard definition={this.props.currentTerm.definition} termType={this.props.currentTerm.type} />
-                      <MultipleChoice currentAnswer={this.props.currentTerm.term} wrongAnswers={this.props.wrongAnswers} displayNextTerm={this.props.displayNextTerm} getCurrentTerm={this.props.getCurrentTerm} />
+                      <MultipleChoice currentAnswer={this.props.currentTerm.term} wrongAnswers={this.props.wrongAnswers} displayNextTerm={this.props.displayNextTerm} />
                     </div>
     }
     return (
