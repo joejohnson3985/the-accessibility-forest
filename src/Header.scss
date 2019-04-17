@@ -3,6 +3,7 @@
 .header-container {
   @include center-flex
   background-color: $accent-color1;
+  height: 10vh;
 }
 
 .header-text {
