@@ -20,7 +20,7 @@ class Forest extends Component {
       <div>
         <section className='forest'>
           <table className="trees">
-            <caption>{whatToRender}</caption>
+            <caption>{whatToRender} has {this.props.points} correct answers!</caption>
             <tbody>
               <tr>
                 {this.props.trees}

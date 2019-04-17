@@ -14,6 +14,7 @@ class Actions extends Component {
     super(props);
     this.state = {
       data: [],
+      correctTerms: [],
       termCounter: 0,
       wrongAnswers: [],
       currentTerm: null,
@@ -45,6 +46,9 @@ class Actions extends Component {
     localStorage.getItem('points') && this.setState({
       points: JSON.parse(localStorage.getItem('points'))
     })
+    localStorage.getItem('correctTerms') && this.setState({
+      correctTerms: JSON.parse(localStorage.getItem('correctTerms'))
+    })
   }
 
   componentDidMount() {
@@ -55,15 +59,20 @@ class Actions extends Component {
   componentWillUpdate(nextProps, nextState) {
     localStorage.setItem('forestName', JSON.stringify(nextState.forestName));
     localStorage.setItem('points', JSON.stringify(nextState.points));
+    localStorage.setItem('correctTerms', JSON.stringify(nextState.correctTerms));
   }
 
   getCurrentTerm = () => {
+    let filteredData = this.state.data.filter(term => {
+      let correctTermsContainsTerm = this.state.correctTerms.find(correctTerm => correctTerm === term.term)
+      return !correctTermsContainsTerm
+    })
     let i = this.state.termCounter
     if(!this.state.data.length) {
       return
     }
     this.setState({
-      currentTerm: this.state.data[i],
+      currentTerm: filteredData[i]
     }, () => {
       this.getWrongAnswers();
     })
@@ -86,14 +95,25 @@ class Actions extends Component {
     })
   }
 
-  displayNextTerm = () => {
+  displayNextTerm = (answer) => {
     let term = this.state.termCounter
     term++
-    this.setState({
-      termCounter: term
-    }, () => {
+    if(answer === this.state.currentTerm.term) {
+      let correctTerms = this.state.correctTerms;
+      correctTerms.push(answer)
+      this.setState({
+        termCounter: term,
+        correctTerms: correctTerms
+      }, () => {
       this.scorePoints();
-    })
+      })
+    } else {
+      this.setState({
+        termCounter: term
+      }, () => {
+        this.getCurrentTerm();
+      })
+    }
   }
 
   scorePoints = () => {
@@ -150,14 +170,14 @@ class Actions extends Component {
     if(!this.state.forestName) {
       whatToRender = <Welcome nameForest={this.nameForest}/>
     } else {
-      whatToRender = <Learn displayNextTerm={this.displayNextTerm} scorePoints={this.scorePoints} currentTerm={this.state.currentTerm} wrongAnswers={this.state.wrongAnswers}/>
+      whatToRender = <Learn getCurrentTerm={this.getCurrentTerm} displayNextTerm={this.displayNextTerm} scorePoints={this.scorePoints} currentTerm={this.state.currentTerm} wrongAnswers={this.state.wrongAnswers}/>
     }
     return (
       <div>
         <div className='actions-container'>
           {whatToRender}
         </div>
-        <Forest trees={this.state.treesToRender} forestName={this.state.forestName} />
+        <Forest trees={this.state.treesToRender} points={this.state.points} forestName={this.state.forestName} />
       </div>
     )
   }

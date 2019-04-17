@@ -9,7 +9,7 @@ class MultipleChoiceItem extends Component {
   }
 
   handleClick = () => {
-    this.props.checkAnswer(this.props.choice)
+    this.props.handleAnswer(this.props.choice)
   }
 
   render() {
