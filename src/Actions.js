@@ -170,7 +170,7 @@ class Actions extends Component {
     if(!this.state.forestName) {
       whatToRender = <Welcome nameForest={this.nameForest}/>
     } else {
-      whatToRender = <Learn displayNextTerm={this.displayNextTerm} scorePoints={this.scorePoints} currentTerm={this.state.currentTerm} wrongAnswers={this.state.wrongAnswers}/>
+      whatToRender = <Learn displayNextTerm={this.displayNextTerm} scorePoints={this.scorePoints} currentTerm={this.state.currentTerm} wrongAnswers={this.state.wrongAnswers} points={this.state.points} />
     }
     return (
       <div>

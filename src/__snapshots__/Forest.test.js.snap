@@ -9,10 +9,9 @@ exports[`Forest Should match the snapshot 1`] = `
       className="trees"
     >
       <caption>
-        Joe's forest
-         has 
-        2
-         correct answers!
+        <strong>
+          Joe's forest
+        </strong>
       </caption>
       <tbody>
         <tr>
@@ -40,10 +39,9 @@ exports[`Forest no name Should match the snapshot without name 1`] = `
       className="trees"
     >
       <caption>
-        Your nameless forest
-         has 
-        2
-         correct answers!
+        <strong>
+          Your nameless forest
+        </strong>
       </caption>
       <tbody>
         <tr>
