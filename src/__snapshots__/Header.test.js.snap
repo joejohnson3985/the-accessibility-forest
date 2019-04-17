@@ -1,22 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App Should match the snapshot 1`] = `
-<header
-  className="header-container"
->
-  <hgroup
-    className="header-text"
-  >
-    <h1>
-      The Accessibility Forest
-    </h1>
-    <h3>
-      Learn about the accessibility tree to grow your forest!
-    </h3>
-  </hgroup>
-</header>
-`;
-
 exports[`Header Should match the snapshot 1`] = `
 <header
   className="header-container"

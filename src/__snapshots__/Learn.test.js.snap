@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App Should match snapshot when props are not avaiable 1`] = `
+<div
+  className="learn-container"
+>
+  <hgroup>
+    <h1>
+      Match
+    </h1>
+    <h5>
+      Get 3 correct and a tree will grow in your forest!
+    </h5>
+  </hgroup>
+  <div
+    className="term-container"
+  >
+    <DefinitionCard />
+    <MultipleChoice
+      wrongAnswers={Array []}
+    />
+  </div>
+</div>
+`;
+
+exports[`App Should match the snapshot 1`] = `
+<div
+  className="learn-container"
+>
+  <hgroup>
+    <h1>
+      Match
+    </h1>
+    <h5>
+      Get 3 correct and a tree will grow in your forest!
+    </h5>
+  </hgroup>
+  <div
+    className="term-container"
+  >
+    <DefinitionCard
+      definition="Indicates that the enclosed HTML provides contact information for a person or people, or for an organization."
+      termType="html tag"
+    />
+    <MultipleChoice
+      currentAnswer="<address>"
+      wrongAnswers={
+        Array [
+          "<header>",
+          "<article>",
+          "<cite>",
+        ]
+      }
+    />
+  </div>
+</div>
+`;
