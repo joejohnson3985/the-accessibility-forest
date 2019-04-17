@@ -22,9 +22,10 @@ class Learn extends Component {
       <div className='learn-container'>
         <hgroup>
           <h1>Match</h1>
-          <h5>Get 3 correct and a tree will grow in your forest!</h5>
+          <h4>Get 3 correct and a tree will grow in your forest!</h4>
         </hgroup>
         {whatToRender}
+        <h2>{this.props.points} correct answers!</h2>
       </div>
     )
   }
