@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Welcome Should match the snapshot 1`] = `
+<div>
+  <form
+    className="name-forest-form"
+    onSubmit={[Function]}
+  >
+    <input
+      className="name-forest-input"
+      onChange={[Function]}
+      placeholder="Name Your Forest"
+      type="text"
+      value=""
+    />
+    <input
+      className="submit-btn"
+      type="submit"
+    />
+  </form>
+</div>
+`;

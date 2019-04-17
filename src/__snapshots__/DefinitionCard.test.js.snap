@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DefinitionCard Should match the snapshot 1`] = `
+<div
+  className="definition-container"
+>
+  <h2>
+    Definition
+  </h2>
+  <h3>
+    html tag
+  </h3>
+  <p>
+    Indicates that the enclosed HTML provides contact information for a person or people, or for an organization.
+  </p>
+</div>
+`;

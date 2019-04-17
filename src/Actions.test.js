@@ -92,11 +92,11 @@ describe('Actions', () => {
       })
     })
 
-    it.skip('Should call getWrongAnswers inside of getCurrentTerm', () => {
-      const spy = jest.spyOn(Actions, 'getWrongAnswers')
-      wrapper.instance().getCurrentTerm();
-      expect(spy).toHaveBeenCalled();
-    });
+    // it.skip('Should call getWrongAnswers inside of getCurrentTerm', () => {
+    //   const spy = jest.spyOn(Actions, 'getWrongAnswers')
+    //   wrapper.instance().getCurrentTerm();
+    //   expect(spy).toHaveBeenCalled();
+    // });
 
     it('Should only assign currentTerm to a term that is not in correctTerms', () => {
       wrapper.state().correctTerms = ["<address>", "<header>"];
@@ -110,37 +110,58 @@ describe('Actions', () => {
     })
   });
   describe('getWrongAnswers', () => {
+    beforeEach(() => {
+      wrapper.state().data = mockData.terms
+    })
     it('Should have the function getWrongAnswers', () => {
       wrapper.instance().getWrongAnswers;
     });
 
     it('Should update the state of wrongAnswers', () => {
-      wrapper.state().wrongAnswers = [{
-          type: "html tag",
-          term: "<address>",
-          definition: "Indicates that the enclosed HTML provides contact information for a person or people, or for an organization."
-        }]
       wrapper.state().currentTerm = {
         type: "html tag",
         term: "<header>",
         definition: "Represents introductory content, typically a group of introductory or navigational aids."
       }
-      wrapper.instance().getWrongAnswers;
-      // expect(wrapper.state().wrongAnswers).toEqual([
-      //   {
-      //     type: "html tag",
-      //     term: "<address>",
-      //     definition: "Indicates that the enclosed HTML provides contact information for a person or people, or for an organization."
-      //   },
-      //   {
-      //     type: "html tag",
-      //     term: "<header>",
-      //     definition: "Represents introductory content, typically a group of introductory or navigational aids."
-      //   }
-      // ])
-
+      wrapper.instance().getWrongAnswers();
+      expect(wrapper.state().wrongAnswers.length).toEqual(3)
     });
+  })
 
+  describe('displayNextTerm', () => {
+    beforeEach(() => {
+      wrapper.state().data = mockData.terms
+    })
+
+    it('Should be a function', () => {
+      wrapper.instance().displayNextTerm;
+    })
+
+    it('Should update termCounter and correctTerms if answer is correct', () => {
+      let answer = "<header>"
+      wrapper.state().correctTerms = []
+      wrapper.state().termCounter = 0
+      wrapper.state().currentTerm = {
+        type: "html tag",
+        term: "<header>",
+        definition: "Represents introductory content, typically a group of introductory or navigational aids."
+      }
+      wrapper.instance().displayNextTerm(answer);
+      expect(wrapper.state().termCounter).toEqual(1)
+      expect(wrapper.state().correctTerms).toEqual(["<header>"])
+    })
+
+  })
+
+  describe('Actions with forestName', () => {
+    beforeEach(() => {
+      wrapper.state().data = mockData.terms
+    })
+
+    it('Should match snapshot with a forestName', () => {
+      expect(wrapper).toMatchSnapshot();
+    })
+  
   })
 
 })

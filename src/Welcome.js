@@ -24,9 +24,9 @@ class Welcome extends Component {
   render() {
     return (
       <div>
-        <form className='name-forest-form'>
+        <form className='name-forest-form' onSubmit={this.handleName}>
           <input className='name-forest-input' value={this.state.name} onChange={this.handleChange} type='text' placeholder='Name Your Forest'/>
-          <input className ='submit-btn' type='submit' onClick = {this.handleName}/>
+          <input className ='submit-btn' type='submit' />
         </form>
       </div>
     )

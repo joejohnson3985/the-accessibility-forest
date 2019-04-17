@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MultipleChoice Should match the snapshot 1`] = `
+<div
+  className="multiple-choice-container"
+>
+  <MultipleChoiceItem
+    choice="<address>"
+    handleAnswer={[Function]}
+    key="0"
+  />
+  <MultipleChoiceItem
+    choice="<article>"
+    handleAnswer={[Function]}
+    key="1"
+  />
+  <MultipleChoiceItem
+    choice="<code>"
+    handleAnswer={[Function]}
+    key="2"
+  />
+  <MultipleChoiceItem
+    choice="<nav>"
+    handleAnswer={[Function]}
+    key="3"
+  />
+</div>
+`;

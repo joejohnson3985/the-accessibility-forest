@@ -1,29 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App Should match snapshot when props are not avaiable 1`] = `
-<div
-  className="learn-container"
->
-  <hgroup>
-    <h1>
-      Match
-    </h1>
-    <h5>
-      Get 3 correct and a tree will grow in your forest!
-    </h5>
-  </hgroup>
-  <div
-    className="term-container"
-  >
-    <DefinitionCard />
-    <MultipleChoice
-      wrongAnswers={Array []}
-    />
-  </div>
-</div>
-`;
-
-exports[`App Should match the snapshot 1`] = `
+exports[`Learn Should match the snapshot 1`] = `
 <div
   className="learn-container"
 >
@@ -53,5 +30,23 @@ exports[`App Should match the snapshot 1`] = `
       }
     />
   </div>
+</div>
+`;
+
+exports[`Learn no props Should match the snapshot without props 1`] = `
+<div
+  className="learn-container"
+>
+  <hgroup>
+    <h1>
+      Match
+    </h1>
+    <h5>
+      Get 3 correct and a tree will grow in your forest!
+    </h5>
+  </hgroup>
+  <p>
+    Preparing your terms...
+  </p>
 </div>
 `;

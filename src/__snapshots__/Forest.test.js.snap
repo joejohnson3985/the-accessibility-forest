@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Forest Should match the snapshot 1`] = `
+<div>
+  <section
+    className="forest"
+  >
+    <table
+      className="trees"
+    >
+      <caption>
+        Joe's forest
+         has 
+        2
+         correct answers!
+      </caption>
+      <tbody>
+        <tr>
+          <td
+            key="test-tree"
+          >
+            <img
+              alt="Geometric tree illustration"
+              src="tree1.png"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+`;
+
+exports[`Forest no name Should match the snapshot without name 1`] = `
+<div>
+  <section
+    className="forest"
+  >
+    <table
+      className="trees"
+    >
+      <caption>
+        A nameless forest!!
+         has 
+        2
+         correct answers!
+      </caption>
+      <tbody>
+        <tr>
+          <td
+            key="test-tree"
+          >
+            <img
+              alt="Geometric tree illustration"
+              src="tree1.png"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>
+`;
