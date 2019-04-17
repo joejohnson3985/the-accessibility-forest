@@ -29,14 +29,6 @@ class MultipleChoice extends Component {
     this.props.displayNextTerm(answer);
   }
 
-  // checkAnswer = (answer) => {
-  //   if(answer === this.props.currentAnswer) {
-  //     this.props.displayNextTerm(answer);
-  //   } else {
-  //     this.props.getCurrentTerm();
-  //   }
-  // }
-
   render() {
     return (
       <div className='multiple-choice-container'>

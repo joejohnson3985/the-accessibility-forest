@@ -17,10 +17,10 @@ describe('Welcome', () => {
     expect(wrapper).toMatchSnapshot();
   })
 
-  it.skip('Should update state of name on change', () => {
+  it('Should update state of name on change', () => {
     expect(wrapper.state('name')).toEqual('')
-    wrapper.find('.name-forest').simulate('change', {target: {value: 'test'}})
-    expect(wrapper.state(name)).toEqual('test')
+    wrapper.find('.name-forest-input').simulate('change', {target: {value: 'test'}})
+    expect(wrapper.state('name')).toEqual('test')
   })
 
   it('Should call submit name on click', () => {
