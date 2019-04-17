@@ -13,7 +13,7 @@ class Forest extends Component {
     if(this.props.forestName) {
       whatToRender = this.props.forestName
     } else {
-      whatToRender = 'A nameless forest!!'
+      whatToRender = 'Your nameless forest'
     }
 
     return (
