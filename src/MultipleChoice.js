@@ -6,6 +6,7 @@ class MultipleChoice extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      showPopUp: false
     }
   }
 
@@ -18,22 +19,21 @@ class MultipleChoice extends Component {
     let answerOptions = this.props.wrongAnswers;
     answerOptions.push(this.props.currentAnswer)
     answerOptions.sort()
-    console.log(answerOptions)
     for(let i = 0; i < 4; i++) {
-      answersDisplay.push(<MultipleChoiceItem choice={answerOptions[i]} key={i} checkAnswer={this.checkAnswer}/>)
+      answersDisplay.push(<MultipleChoiceItem choice={answerOptions[i]} key={i} handleAnswer={this.handleAnswer}/>)
     }
     return answersDisplay;
   }
 
+  handleAnswer = (answer) => {
+    this.props.displayNextTerm(answer);
+  }
+
   checkAnswer = (answer) => {
     if(answer === this.props.currentAnswer) {
-      this.props.displayNextTerm();
-        this.setState({
-          answerOptions: []
-        })
-
+      this.props.displayNextTerm(answer);
     } else {
-      alert('Try Again')
+      this.props.getCurrentTerm();
     }
   }
 
