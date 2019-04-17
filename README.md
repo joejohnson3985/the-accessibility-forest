@@ -14,6 +14,14 @@ npm start will run the app in the development mode. When the server is running, 
 
 If any alterations to the code are made, then the page will refresh.
 
+## Testing
+
+App is tested with Jest and Enzyme
+
+`npm run test`
+
+npm run test will allow you to see the test results
+
 ## Screen Shots
 
 #### Welcome screen
