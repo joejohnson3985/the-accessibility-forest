@@ -14,6 +14,8 @@ class Actions extends Component {
     super(props);
     this.state = {
       data: [],
+      completed: false,
+      continuePractice: false,
       correctTerms: [],
       termCounter: 0,
       wrongAnswers: [],
@@ -68,14 +70,22 @@ class Actions extends Component {
       return !correctTermsContainsTerm
     })
     let i = this.state.termCounter
-    if(!this.state.data.length) {
-      return
+    if(!filteredData.length) {
+      this.setState({
+        completed: true,
+        continuePractice: false
+      })
+    } else if(i >= filteredData.length) {
+      this.setState({
+        continuePractice: true
+      })
+    } else {
+      this.setState({
+        currentTerm: filteredData[i]
+      }, () => {
+        this.getWrongAnswers();
+      })
     }
-    this.setState({
-      currentTerm: filteredData[i]
-    }, () => {
-      this.getWrongAnswers();
-    })
   }
 
   getWrongAnswers = () => {
@@ -102,7 +112,6 @@ class Actions extends Component {
       let correctTerms = this.state.correctTerms;
       correctTerms.push(answer)
       this.setState({
-        termCounter: term,
         correctTerms: correctTerms
       }, () => {
       this.scorePoints();
@@ -170,7 +179,13 @@ class Actions extends Component {
     if(!this.state.forestName) {
       whatToRender = <Welcome nameForest={this.nameForest}/>
     } else {
-      whatToRender = <Learn displayNextTerm={this.displayNextTerm} scorePoints={this.scorePoints} currentTerm={this.state.currentTerm} wrongAnswers={this.state.wrongAnswers} points={this.state.points} />
+      whatToRender = <Learn displayNextTerm={this.displayNextTerm} 
+                            scorePoints={this.scorePoints} 
+                            currentTerm={this.state.currentTerm} 
+                            wrongAnswers={this.state.wrongAnswers} 
+                            points={this.state.points} 
+                            completed={this.state.completed} 
+                            continuePractice={this.state.continuePractice}/>
     }
     return (
       <div>

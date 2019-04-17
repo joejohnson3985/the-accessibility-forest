@@ -54,6 +54,8 @@ describe('Actions', () => {
     it('Should have default state', () => {
       expect(wrapper.state()).toEqual({
         data: [],
+        completed: false,
+        continuePractice: false,
         correctTerms: [],
         termCounter: 0,
         wrongAnswers: [],
@@ -139,7 +141,7 @@ describe('Actions', () => {
       it('Should be a function', () => {
         wrapper.instance().displayNextTerm;
       })
-      it('Should update termCounter and correctTerms if answer is correct', () => {
+      it('Should update not termCounter and update correctTerms if answer is correct', () => {
         let answer = "<header>"
         wrapper.state().correctTerms = []
         wrapper.state().termCounter = 0
@@ -149,7 +151,7 @@ describe('Actions', () => {
           definition: "Represents introductory content, typically a group of introductory or navigational aids."
         }
         wrapper.instance().displayNextTerm(answer);
-        expect(wrapper.state().termCounter).toEqual(1)
+        expect(wrapper.state().termCounter).toEqual(0)
         expect(wrapper.state().correctTerms).toEqual(["<header>"])
       })
       it('Should only update termCounter if answer is incorrect', () => {
