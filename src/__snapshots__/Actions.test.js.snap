@@ -1,5 +1,31 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Actions Actions with forestName Should match snapshot with a forestName 1`] = `
+<div>
+  <div
+    className="actions-container"
+  >
+    <Welcome
+      nameForest={[Function]}
+    />
+  </div>
+  <Forest
+    forestName=""
+    points={1}
+    trees={
+      Array [
+        <td>
+          <img
+            alt="Geometric tree illustration"
+            src="tree1.png"
+          />
+        </td>,
+      ]
+    }
+  />
+</div>
+`;
+
 exports[`Actions defaults Should match the snapshot 1`] = `
 <div>
   <div

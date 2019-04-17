@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MultipleChoiceItem Should match the snapshot 1`] = `
+<div>
+  <div
+    className="choice-btn"
+    onClick={[Function]}
+    role="button"
+  >
+    &lt;address&gt;
+  </div>
+</div>
+`;
